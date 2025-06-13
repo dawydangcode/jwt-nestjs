@@ -22,3 +22,5 @@ import { UserEntity } from '../users/entity/user.entity';
   exports: [AuthService],
 })
 export class AuthModule {}
+git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
