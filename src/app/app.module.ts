@@ -5,7 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import database from 'src/config/database';
 import { AppService } from './app.service';
 import app from 'src/config/app';
-import { UsersModule } from 'src/users/users.module';
+import { UsersModule } from 'src/auth/modules/users/users.module';
 import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
