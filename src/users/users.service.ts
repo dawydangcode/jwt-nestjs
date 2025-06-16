@@ -20,4 +20,15 @@ export class UsersService {
     }
     return user.toModel();
   }
+
+  async createUser(username: string, password: string): Promise<UserModel> {
+    const entity = new UserEntity();
+
+    entity.username = username;
+    entity.password = password;
+    entity.createdAt = new Date();
+
+    const newUser = await this.userRepository.save(entity);
+    return await this.getUser(newUser.username);
+  }
 }
