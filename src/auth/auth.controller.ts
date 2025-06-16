@@ -12,6 +12,8 @@ import {
 import { AuthService } from './auth.service';
 import { ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from './auth.guard';
+import { RoleEnum } from './enum/role.enum';
+import { Roles } from './decorator/roles.decorator';
 
 @ApiTags('Auth')
 @Controller('api/v1/')
@@ -26,6 +28,7 @@ export class AuthController {
 
   @UseGuards(AuthGuard)
   @Get('auth/profile')
+  @Roles(RoleEnum.USER, RoleEnum.ADMIN)
   async getProfile(@Request() req: any) {
     return req.user;
   }
